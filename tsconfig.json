@@ -1,0 +1,32 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "useDefineForClassFields": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom"],
+    "types": ["@dcloudio/types", "vite/client"],
+    // Required in Vite
+    // "isolatedModules": false,
+    // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
+    "preserveValueImports": false,
+    // Enforce using `import type` instead of `import` for types
+    // 移除未使用的导入语句
+    "importsNotUsedAsValues": "remove"
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/**/*.tsx"],
+  "vueCompilerOptions": {
+    "target": 3
+  },
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
