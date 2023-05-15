@@ -27,8 +27,6 @@ module.exports = {
   },
   plugins: ["vue", "@typescript-eslint"],
   rules: {
-    "@typescript-eslint/no-explicit-any": 1, // any报错
-    "vue/multi-word-component-names": "warn",
     // 我们自定义的规则写在这里
     "prettier/prettier": [
       "error",
@@ -40,6 +38,9 @@ module.exports = {
         useTabs: false,
         endOfLine: "auto"
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": 1, // any报错
+    "vue/multi-word-component-names": "warn",
+    "@typescript-eslint/no-unused-vars": 0
   }
 }

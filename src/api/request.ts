@@ -39,6 +39,7 @@ instance.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
 export default function request<T>(config: AxiosRequestConfig): Promise<T> {
   return instance
     .request<ResponseData>(config)

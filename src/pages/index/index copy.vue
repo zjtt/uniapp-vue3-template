@@ -21,21 +21,30 @@
   </tm-app>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import MTabbar from "@/components/common/MTabbar.vue"
-import { reactive, toRefs } from "vue"
+import { defineComponent, reactive, toRefs } from "vue"
 
 import { useCount, useDialog } from "./hooks"
 
-const state = reactive({
-  title: "Hello UniApp"
+export default defineComponent({
+  setup() {
+    const state = reactive({
+      title: "Hello UniApp"
+    })
+
+    const countHook = useCount()
+    const { show, handleOpen, handleClose } = useDialog()
+
+    return {
+      ...toRefs(state),
+      ...countHook,
+      show,
+      handleOpen,
+      handleClose
+    }
+  }
 })
-
-const countHook = useCount()
-const { show, handleOpen, handleClose } = useDialog()
-
-const { title } = toRefs(state)
-const { count, handleCount } = countHook
 </script>
 
 <style lang="scss" scoped>
