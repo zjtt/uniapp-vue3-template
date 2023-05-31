@@ -14,7 +14,9 @@
     "vue" //设置vue表示使用eslint检查vue
   ],
   "files.associations": {
-    "*.vue": "vue"
+    "*.vue": "vue",
+    "manifest.json": "jsonc",
+    "pages.json": "jsonc"
     // "*.ts": "typescript"
   },
   "[vue]": {
