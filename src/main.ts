@@ -6,8 +6,11 @@ import { createPersistedState } from "pinia-plugin-persistedstate"
 
 // #ifdef VUE3
 import { createSSRApp } from "vue"
+import router from "./router"
+
 export function createApp() {
   const app = createSSRApp(App)
+  app.use(router)
   const pinia = Pinia.createPinia().use(
     createPersistedState({
       storage: {
