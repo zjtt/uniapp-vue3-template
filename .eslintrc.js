@@ -2,7 +2,8 @@
 module.exports = {
   globals: {
     uni: "readonly",
-    wx: "readonly"
+    wx: "readonly",
+    UniApp: "readonly"
   },
   env: {
     // 环境，针对哪些环境的语法

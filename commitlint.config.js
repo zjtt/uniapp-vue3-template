@@ -1,6 +1,10 @@
 /**
  * @file commitlint 配置
- * commit message: <type>: <subject>(注意冒号后面有空格)
+ * type用于说明 commit 的类别
+ * scope用于说明 commit 影响的范围，比如数据层、控制层、视图层等等
+ * subject是 commit 目的的简短描述，不超过50个字符
+ * type（必需）、scope（可选）和subject（必需）
+ * commit message: <type>(<scope>): <subject>(注意冒号后面有空格)
  *
  */
 module.exports = {
