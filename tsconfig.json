@@ -15,7 +15,12 @@
       "@/*": ["src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types", "@uni-helper/uni-app-types", "vite/client"],
+    "types": [
+      "@dcloudio/types",
+      "@uni-helper/uni-app-types",
+      "vite/client",
+      "./src/uni_modules/sakura-canvas-ts/js_sdk/types"
+    ],
     // Required in Vite
     // "isolatedModules": false,
     // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
@@ -24,7 +29,14 @@
     // 移除未使用的导入语句
     "importsNotUsedAsValues": "remove"
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/**/*.tsx"],
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.d.ts",
+    "./src/**/*.vue",
+    "./src/**/*.tsx"
+  ],
+  "exclude": ["./src/tmui"],
+  // "./src/uni_modules"
   "vueCompilerOptions": {
     "target": 3
   },
