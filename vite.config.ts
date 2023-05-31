@@ -4,6 +4,8 @@ import { defineConfig } from "vite"
 import autoprefixer from "autoprefixer"
 import path from "path"
 import TransformPages from "uni-read-pages-vite"
+// 类型检查
+// import checker from "vite-plugin-checker"
 // 自动引入
 // import AutoImport from 'unplugin-auto-import/vite'
 
@@ -26,6 +28,12 @@ export default defineConfig({
   },
   plugins: [
     uni()
+    // checker({
+    //   vueTsc: {
+    //     root: ".",
+    //     tsconfigPath: "./tsconfig.json"
+    //   }
+    // })
     // AutoImport({
     //   imports: [
     //     "vue",
@@ -45,6 +53,21 @@ export default defineConfig({
     // })
   ],
   server: {
-    port: 8080
+    port: 8091,
+    host: "0.0.0.0", // 将服务暴露在局域网中
+    open: true,
+    proxy: {
+      "/activity": {
+        target: "https://xxx.baidu.com",
+        changeOrigin: true,
+        // configure: (proxy, options) => {
+        //   console.log("proxy, options", proxy);
+        //   // proxy 是 'http-proxy' 的实例
+        // },
+        cookieDomainRewrite: {
+          "baidu.com": "192.168.43.11"
+        }
+      }
+    }
   }
 })

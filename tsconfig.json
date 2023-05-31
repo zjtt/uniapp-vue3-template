@@ -15,7 +15,7 @@
       "@/*": ["src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types", "vite/client"],
+    "types": ["@dcloudio/types", "@uni-helper/uni-app-types", "vite/client"],
     // Required in Vite
     // "isolatedModules": false,
     // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
