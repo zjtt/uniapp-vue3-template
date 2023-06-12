@@ -49,6 +49,7 @@ export default defineConfig({
     //   eslintrc: {
     //     enabled: true,
     //     globalsPropValue: true
+    //     filepath: "./.eslintrc-auto-import.json" // 会在根目录生成此文件
     //   }
     // })
   ],
