@@ -9,8 +9,7 @@
     "esbenp.prettier-vscode",
     "eamodio.gitlens",
     "dlhtx.uniapp-snippet",
-    "ms-ceintl.vscode-language-pack-zh-hans",
-    "vue.vscode-typescript-vue-plugin"
+    "ms-ceintl.vscode-language-pack-zh-hans"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
