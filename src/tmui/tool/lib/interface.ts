@@ -38,10 +38,10 @@ export interface cssStyleConfig {
     dark: boolean,//暗黑
     outlined?: boolean,
     text?: boolean,
-    borderStyle?: string,
-    blur?: boolean,
+    borderStyle?:string,
+	blur?:boolean,
     /**边线颜色，可以不提供。不提供使用自动计算的值。 */
-    borderColor?: string
+    borderColor?:string
 }
 
 
@@ -56,17 +56,17 @@ export interface cssstyle {
     textColorCss?: object,
     elevation?: number,//安卓端的投影。
     shadowColor?: object,
-    config?: cssStyleConfig
-    gradientColor?: Array<string>,
+    config?:cssStyleConfig
+    gradientColor?:Array<string>,
     cardcolor?: string,//项目暗黑下的背景色
     inputcolor?: string,//输入框，表单等暗黑下的背景色
     bodycolor?: string,//暗黑下的背景色
     disablecolor?: string,//禁用的项目或者表单暗黑下
     textDisableColor?: string,//文本禁用色.暗黑下
-    isBlackAndWhite?: boolean,//该主题是否是黑白色系。
-    color?: string//原始颜色未处理过的。
+    isBlackAndWhite?:boolean,//该主题是否是黑白色系。
+    color?:string//原始颜色未处理过的。
     /**linearDirection对应css的方向 */
-    linearDirectionStr?: string,
+    linearDirectionStr?:string,
 }
 
 //颜色主题对象。
@@ -79,7 +79,7 @@ export interface colorThemeType {
     csscolor?: string
 }
 //主题方向
-export type cssDirectionType = "left" | "right" | "top" | "bottom" | "all" | "leftright" | "topbottom" | "topleft" | "topright" | "bottomleft" | "bottomright" | "x" | "y";
+export type cssDirectionType = "left"|"right"|"top"|"bottom"|"all"|"leftright"|"topbottom"|"topleft"|"topright"|"bottomleft"|"bottomright"|"x"|"y";
 export enum cssDirection {
     left = "left",
     right = "right",
@@ -94,7 +94,7 @@ export enum cssDirection {
     all = "all"
 }
 //渐变方向
-export type linearDirectionType = "left" | "right" | "top" | "bottom" | ""
+export type linearDirectionType= "left"|"right"|"top"|"bottom"|""
 export enum linearDirection {
     left = "to left",
     right = "to right",
@@ -103,7 +103,7 @@ export enum linearDirection {
     none = ""
 }
 //渐变的颜色类型
-export type linearDeepType = "light" | "dark" | "accent"
+export type linearDeepType = "light"|"dark"|"accent"
 export enum linearDeep {
     /**
      * 亮色
@@ -119,7 +119,7 @@ export enum linearDeep {
     accent = "accent",
 }
 // 边线样式
-export type borderStyleType = "solid" | "dashed" | "dotted";
+export type borderStyleType = "solid"|"dashed"|"dotted";
 export enum borderStyle {
     solid = 'solid',
     dashed = 'dashed',
@@ -141,38 +141,38 @@ export interface tmVuetify {
     tmVueTifly_pages: string,
     tmVueTifly_pagesIndex: string,
     //这里是微信小程序和微信H5的配置资料。
-    wxshareConfig_miniMp: wxshareConfig,
+    wxshareConfig_miniMp:wxshareConfig ,
     //当前存储存的主题对象。
     colorList: Array<colorThemeType>,
     //当前的语言
-    local: string
-    os: string
+    local:string
+    os:string
 }
 
-export type fetchConfigResponseType = "arraybuffer" | "text";
-export type fetchConfigDataType = "json" | "text";
-export type fetchConfigMethod = "GET" | "POST" | "PUT" | "DELETE" | "CONNECT" | "HEAD" | "OPTIONS" | "TRACE";
+export type fetchConfigResponseType= "arraybuffer"|"text";
+export type fetchConfigDataType = "json"|"text";
+export type fetchConfigMethod= "GET"|"POST"|"PUT"|"DELETE"|"CONNECT"|"HEAD"|"OPTIONS"|"TRACE";
 
-export interface fetchConfigSuccessType {
-    data: object | string | ArrayBuffer,
-    statusCode: number,
-    header: object,
-    cookies: Array<string>
+export interface fetchConfigSuccessType{
+    data:object|string|ArrayBuffer,
+    statusCode:number,
+    header:object,
+    cookies:Array<string>
 }
 export interface fetchConfig {
-    url?: string,
-    /** 定义成功的服务器返回的状态码成功的标志 */
-    statusCode?: number,
-    data?: object | string | ArrayBuffer,
-    header?: object,
-    method?: fetchConfigMethod,
-    timeout?: number,
-    dataType?: fetchConfigDataType,
-    responseType?: fetchConfigResponseType,
-    sslVerify?: boolean,
-    withCredentials?: boolean,
-    firstIpv4?: boolean,
-    success?: Function,
-    fail?: Function,
-    complete?: Function
+    url?:string,
+	/** 定义成功的服务器返回的状态码成功的标志 */
+	statusCode?:number,
+    data?:object|string|ArrayBuffer,
+    header?:object,
+    method?:fetchConfigMethod,
+    timeout?:number,
+    dataType?:fetchConfigDataType,
+    responseType?:fetchConfigResponseType,
+    sslVerify?:boolean,
+    withCredentials?:boolean,
+    firstIpv4?:boolean,
+    success?:Function,
+    fail?:Function,
+    complete?:Function
 }

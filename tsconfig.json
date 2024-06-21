@@ -2,25 +2,22 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "sourceMap": true,
-    "baseUrl": ".",
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
     "jsx": "preserve",
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "useDefineForClassFields": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": [
-      "@dcloudio/types",
-      "@uni-helper/uni-app-types",
-      "vite/client",
-      "./src/uni_modules/sakura-canvas-ts/js_sdk/types"
-    ],
+    "types": ["@dcloudio/types", "@uni-helper/uni-app-types", "vite/client"],
     // Required in Vite
     // "isolatedModules": false,
     // See <https://devblogs.microsoft.com/typescript/announcing-typescript-4-5-beta/#preserve-value-imports>
@@ -30,15 +27,19 @@
     "importsNotUsedAsValues": "remove"
   },
   "include": [
+    "./src/*.ts",
     "./src/**/*.ts",
+    "./src/*.d.ts",
     "./src/**/*.d.ts",
+    "./src/*.vue",
     "./src/**/*.vue",
+    "./src/*.tsx",
     "./src/**/*.tsx"
   ],
-  "exclude": ["./src/tmui"],
-  // "./src/uni_modules"
+  // "./src/tmui"
+  // "exclude": ["./src/uni_modules"],
   "vueCompilerOptions": {
     "target": 3
-  },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  }
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }

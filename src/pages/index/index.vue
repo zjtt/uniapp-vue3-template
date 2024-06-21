@@ -3,12 +3,14 @@
     <view class="logoWrap">
       <image class="logo" src="../../static/logo.png" />
     </view>
-    <view class="rounded border-a-1 text-red">666</view>
+    <view class="uno-text-center">666</view>
     <view class="textWrap">
       <text class="title">{{ title }}</text>
       <text class="count">{{ count }}</text>
       <tm-button class="btn" @click="handleCount">计数</tm-button>
       <tm-button class="btn" @click="handleOpen">弹窗</tm-button>
+      <tm-button class="btn" @click="handleSwitch('Order')">列表</tm-button>
+      <tm-button class="btn" @click="handleSwitch('Tmui')">tmui示例</tm-button>
     </view>
     <tm-drawer :show="show" placement="center" closeable @close="handleClose">
       <view class="dialog">
@@ -36,6 +38,13 @@ const { show, handleOpen, handleClose } = useDialog()
 
 const { title } = toRefs(state)
 const { count, handleCount } = countHook
+
+const router = useRouter()
+const handleSwitch = (name) => {
+  router.push({
+    name
+  })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +56,7 @@ const { count, handleCount } = countHook
 .logoWrap {
   height: 200rpx;
   width: 200rpx;
+  margin: 0 auto;
 
   .logo {
     width: 100%;

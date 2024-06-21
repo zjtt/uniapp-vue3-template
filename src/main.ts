@@ -7,6 +7,16 @@ import { createPersistedState } from "pinia-plugin-persistedstate"
 // #ifdef VUE3
 import { createSSRApp } from "vue"
 import router from "./router"
+// #ifdef H5
+if (import.meta.env.VITE_API_URL === "http://xxx.neibu.com") {
+  const erudaScript = document.createElement("script")
+  erudaScript.src = "//xxx.neibu.com/front/js/eruda.js"
+  erudaScript.onload = () => {
+    eruda.init()
+  }
+  document.body.appendChild(erudaScript)
+}
+// #endif
 
 export function createApp() {
   const app = createSSRApp(App)
@@ -24,8 +34,13 @@ export function createApp() {
     })
   )
   app.use(pinia)
-  app.use(tmui, { autoDark: false } as Tmui.tmuiConfig)
-  // 如此配置即可
+  app.use(tmui, {
+    autoDark: false,
+    light: {
+      bgColor: "#fff"
+    }
+  } as Tmui.tmuiConfig)
+
   return {
     app,
     Pinia

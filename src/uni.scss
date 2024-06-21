@@ -74,3 +74,87 @@ $uni-color-subtitle: #555; // 二级标题颜色
 $uni-font-size-subtitle: 18px;
 $uni-color-paragraph: #3f536e; // 文章段落颜色
 $uni-font-size-paragraph: 15px;
+
+@mixin flex($direction: row) {
+  /* #ifndef APP-PLUS-NVUE */
+  display: flex;
+
+  /* #endif */
+  flex-direction: $direction;
+}
+
+@mixin flex-y-center($direction: row) {
+  @include flex($direction);
+
+  align-items: center;
+}
+
+@mixin flex-x-center($direction: row) {
+  @include flex($direction);
+
+  justify-content: center;
+}
+
+@mixin flex-xy-center($direction: row) {
+  @include flex($direction);
+
+  align-items: center;
+  justify-content: center;
+}
+
+.pc-page {
+  background-color: #fff !important;
+}
+
+@media screen and (max-width: 960px) {
+  .pc-page {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .pc-page {
+    width: 375px;
+    margin: 0 auto;
+  }
+}
+
+.redword {
+  color: #ff6167 !important;
+}
+
+.mescroll-body {
+  :deep(.empty-icon) {
+    width: 120rpx !important;
+    height: 120rpx !important;
+  }
+}
+
+page,
+text,
+view,
+navigator,
+swiper,
+swiper-item,
+image {
+  /* 设置组件全局边距 */
+  margin: 0;
+  padding: 0;
+
+  /*
+  * 指定元素的宽或高包含padding和border，不包含mmargin。
+  * 如果不设置默认为content-box，元素的宽或高不包含padding和border
+  */
+  box-sizing: border-box;
+}
+
+// 清除小程序button原始样式
+.mp-button {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+
+  &::after {
+    border: none;
+  }
+}

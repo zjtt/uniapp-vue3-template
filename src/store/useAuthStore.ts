@@ -13,6 +13,8 @@ class UserInfo {
 }
 
 interface AuthStore {
+  isReal: Nullable<null>
+  isLogin: Nullable<null>
   // 鉴权令牌
   userInfo: Nullable<UserInfo>
 }
@@ -20,18 +22,22 @@ interface AuthStore {
 export const useAuthStore = defineStore(
   "useAuthStore",
   () => {
-    const useAuthState: AuthStore = reactive({
+    const authState: AuthStore = reactive({
+      isLogin: null,
+      isReal: null,
       userInfo: null
     })
     const logout = () => {
-      useAuthState.userInfo = null
+      authState.userInfo = null
+      authState.isReal = null
+      authState.isLogin = null
     }
-    return { useAuthState, logout }
+    return { authState, logout }
   },
   {
     persist: {
       key: "authState",
-      paths: ["useAuthState.userInfo"]
+      paths: ["authState.userInfo"]
     }
   }
 )

@@ -1,10 +1,7 @@
 import axios, { AxiosRequestConfig, CancelTokenSource } from "axios"
 import { TypeAbortRequest } from "./requestTypes"
 
-const requestMap: Map<string, CancelTokenSource> = new Map<
-  string,
-  CancelTokenSource
->() //请求&AbortController的map
+const requestMap: Map<string, CancelTokenSource> = new Map<string, CancelTokenSource>() //请求&AbortController的map
 
 export class AxiosCancelToken {
   /**
@@ -49,10 +46,7 @@ export class AxiosCancelToken {
 
 export const axiosCancelToken = new AxiosCancelToken()
 
-export const useAxiosCancelToken = (
-  config: AxiosRequestConfig,
-  abortRequest: TypeAbortRequest
-) => {
+export const useAxiosCancelToken = (config: AxiosRequestConfig, abortRequest: TypeAbortRequest) => {
   switch (abortRequest) {
     case "all":
       axiosCancelToken.removeAllRequest()

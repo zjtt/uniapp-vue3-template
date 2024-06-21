@@ -49,17 +49,6 @@
   /* 快应用特有相关 */
   "quickapp": {},
   /* 小程序特有相关 */
-  "mp-weixin": {
-    "appid": "",
-    "setting": {
-      "urlCheck": false,
-      "es6": true,
-      "postcss": true,
-      "minified": true
-    },
-    "usingComponents": true,
-    "lazyCodeLoading": "requiredComponents"
-  },
   "mp-alipay": {
     "usingComponents": true
   },
@@ -72,5 +61,45 @@
   "uniStatistics": {
     "enable": false
   },
-  "vueVersion": "3"
+  "vueVersion": "3",
+  // 微信小程序
+  "mp-weixin": {
+    "appid": "wx3197b9669531fd3e",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "__usePrivacyCheck__": true,
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents",
+    "optimization": {
+      "subPackages": true
+    }
+  },
+  "h5": {
+    "uniStatistics": {
+      "enable": false
+    },
+    // "title": "产品名字",
+    "router": {
+      "mode": "history",
+      "base": "/front/"
+    },
+    "optimization": {
+      "treeShaking": {
+        "enable": true
+      }
+    },
+    "sdkConfigs": {
+      "maps": {}
+    },
+    "async": {
+      "loading": "AsyncLoading", // 页面 js 加载时使用的组件（需注册为全局组件
+      "error": "AsyncErrorNew", // 页面 js 加载失败时使用的组件（需注册为全局组件）
+      "delay": 200, // 展示 loading 加载组件的延时时间（页面 js 若在 delay 时间内加载完成，则不会显示 loading 组件）
+      "timeout": 60000 // 页面 js 加载超时时间（超时后展示 error 对应的组件）
+    }
+  }
 }

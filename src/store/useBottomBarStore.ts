@@ -19,9 +19,9 @@ export const useBottomBarStore = defineStore(
     return { useBottomBarState, changeBottomBarIndex }
   },
   {
-    persist: {
-      key: "useBottomBarState",
-      paths: ["useBottomBarState.selectedIndex"]
-    }
+    // persist: {
+    // key: "useBottomBarState",
+    // paths: ["useBottomBarState.selectedIndex"]
+    // }
   }
 )

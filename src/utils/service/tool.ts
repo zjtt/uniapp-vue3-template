@@ -2,13 +2,7 @@ import qs from "qs"
 import type { HttpOption } from "./requestTypes"
 
 // 处理请求数据
-export const handleRequestConfig = <D>({
-  url,
-  data,
-  method = "GET",
-  dataType,
-  headers = {}
-}: HttpOption<D>) => {
+export const handleRequestConfig = <D>({ url, data, method = "GET", dataType, headers = {} }: HttpOption<D>) => {
   const commonConfig = {
     platform: 0,
     deviceid: "deviceId",
@@ -46,7 +40,8 @@ export const handleRequestConfig = <D>({
       axiosConfig = {
         url,
         method,
-        headers: { "content-type": "multipart/form-data", ...commonConfig },
+        // "content-type": "multipart/form-data",
+        headers: { ...commonConfig },
         data: data
       }
     } else {

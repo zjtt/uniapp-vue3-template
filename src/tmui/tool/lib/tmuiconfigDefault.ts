@@ -2,6 +2,8 @@ import { useTmRouterAfter, useTmRouterBefore } from "../router/index"
 export default {
     autoDark: false,
     theme:{},
+	/** 开启全局分离功能，默认关闭 */
+	shareDisable:true,
     themeConfig: {
         theme: {},
         globalFontSizeRatio:1,

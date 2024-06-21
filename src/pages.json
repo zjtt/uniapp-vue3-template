@@ -14,6 +14,7 @@
   "pages": [
     {
       "path": "pages/index/index",
+      "name": "Home",
       "style": {
         // "navigationStyle": "custom", // 隐藏系统导航栏
         "enablePullDownRefresh": false
@@ -21,51 +22,20 @@
       }
     },
     {
-      "path": "pages/example/index/index",
-      "name": "example",
+      "path": "pages/order/Order",
+      "name": "Order",
       "style": {
-        "navigationBarTitleText": "例子首页"
-      }
-    },
-    {
-      "path": "pages/example/navbar/NavBar",
-      "name": "NavBar",
-      "style": {
-        "navigationBarTitleText": "navbar",
-        "navigationStyle": "custom", // 隐藏系统导航栏
-        "enablePullDownRefresh": false
+        "navigationStyle": "custom" // 隐藏系统导航栏
+        // "enablePullDownRefresh": false
         // "navigationBarTextStyle": "white"
       }
     },
     {
-      "path": "pages/example/poster/index",
-      "name": "poster",
+      "path": "pages/tmui/Tmui",
+      "name": "Tmui",
       "style": {
-        "navigationBarTitleText": "sakura-canvas-ts"
-      }
-    },
-    {
-      "path": "pages/example/poster/autoHeight",
-      "style": {
-        "navigationBarTitleText": "不固定高度"
-      }
-    },
-    {
-      "path": "pages/example/poster/autoBackground",
-      "style": {
-        "navigationBarTitleText": "不固定背景图片高度"
-      }
-    },
-    {
-      "path": "pages/example/poster/poster",
-      "style": {
-        "navigationBarTitleText": "海报分享图"
-      }
-    },
-    {
-      "path": "pages/example/poster/jsonPoster",
-      "style": {
-        "navigationBarTitleText": "JSON-海报分享图"
+        // "enablePullDownRefresh": false
+        // "navigationBarTextStyle": "white"
       }
     }
   ]

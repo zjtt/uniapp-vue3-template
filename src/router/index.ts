@@ -1,11 +1,14 @@
 import { createRouter } from "uni-mini-router"
+import { createRouterGuard } from "./guard"
+
 const router = createRouter({
+  // h5: {
+  //   mode: "history",
+  //   base: "/front/"
+  // },
   routes: [...ROUTES] // 路由表信息
 })
 
-router.beforeEach((to, from, next) => {
-  // next入参 false 以取消导航
-  next(true)
-})
+createRouterGuard(router)
 
 export default router

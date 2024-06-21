@@ -6,3 +6,10 @@ declare module "*.vue" {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare var window: Window & {
+  WeixinJSBridge: any
+  WVJBCallbacks: any
+} & typeof globalThis
+declare var eruda: any
+declare var wx: any
